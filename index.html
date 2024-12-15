@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" type="module"></script>
+</head>
+<body>
+  <!-- The container for the entire game -->
+  <div data-world class="world">
+    <!-- The game score -->
+    <div data-score class="score">0</div>
+
+    <!-- Start screen message -->
+    <div data-start-screen class="start-screen">
+      <div class="start-text">Tap or Press any key to start</div>
+    </div>
+
+    <!-- Ground images -->
+    <img src="./imgs/ground.png" class="ground" data-ground>
+    <img src="./imgs/ground.png" class="ground" data-ground>
+
+    <!-- Dino image -->
+    <img src="./imgs/dino-stationary.png" class="dino" data-dino>
+  </div>
+</body>
+</html>

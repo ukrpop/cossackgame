@@ -1,0 +1,140 @@
+@font-face {
+  font-family: 'OwnFonts';
+  src: url(./fonts/PressStart2P-Regular.ttf);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #00B2F0 58.3%, #FAD619 32%);
+}
+
+.world {
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 100 / 40; /* Matches the new WORLD_WIDTH/WORLD_HEIGHT ratio */
+}
+.item {
+  position: absolute;
+  width: 5%;
+  height: 5%;
+  bottom: calc(var(--bottom) * 1%);
+  left: calc(var(--left) * 1%);
+  background: url('./imgs/item.png') no-repeat center;
+  background-size: contain;
+}
+
+
+.score {
+  font-family: 'OwnFonts';
+  position: absolute;
+  font-size: 3vmin;
+  right: 1vmin;
+  top: 1vmin;
+}
+
+.start-screen {
+  font-family: 'OwnFonts';
+  position: absolute;
+  font-size: 7vmin;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+}
+
+.hide {
+  display: none;
+}
+
+.ground {
+  --left: 0;
+  position: absolute;
+  width: 300%;
+  bottom: 0;
+  left: calc(var(--left) * 1%)
+}
+
+.dino {
+  --bottom: 0;
+  position: absolute;
+  left: 1%;
+  height: 40%;
+  bottom: calc(var(--bottom) * 1%);
+}
+
+.cactus {
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  height: 16%;
+  bottom: 0;
+}
+
+.start-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+[data-world] {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Centering the start screen and game over text */
+.start-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 5vw; /* Makes the font size responsive based on viewport width */
+  color: white;
+  z-index: 10;
+  width: 90%; /* Ensures text does not overflow the screen */
+}
+
+/* Adjustments for mobile */
+@media (max-width: 768px) {
+  .start-screen {
+    font-size: 7vw; /* Slightly larger text on smaller screens */
+  }
+}
+
+/* Game over text should be the same style */
+.start-screen.game-over {
+  font-size: 7vw; /* Makes game over text appropriately large */
+}
+
+/* Add styles to ensure the game world is properly centered */
+[data-world] {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.start-text{
+  font-size: 15px;
+  color: white;
+}
